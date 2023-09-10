@@ -23,4 +23,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	// It uses for UE editor property - UPROPERTY
+	UPROPERTY(EditAnywhere, Category = "Moving Platforms")
+	FVector PlatformVelocity = FVector(100, 0, 0);
+	
 };
