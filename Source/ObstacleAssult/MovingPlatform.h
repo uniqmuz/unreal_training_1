@@ -26,5 +26,9 @@ public:
 	// It uses for UE editor property - UPROPERTY
 	UPROPERTY(EditAnywhere, Category = "Moving Platforms")
 	FVector PlatformVelocity = FVector(100, 0, 0);
-	
+
+	FVector StartLocation;
+
+	UPROPERTY(VisibleAnywhere)
+	float DistanceMoved = -1;
 };
