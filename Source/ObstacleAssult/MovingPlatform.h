@@ -23,12 +23,21 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+private:
+	
 	// It uses for UE editor property - UPROPERTY
-	UPROPERTY(EditAnywhere, Category = "Moving Platforms")
+	UPROPERTY(EditAnywhere, Category = "Moving")
 	FVector PlatformVelocity = FVector(100, 0, 0);
-	UPROPERTY(EditAnywhere, Category = "Moving Platforms")
-	float MoveDistance = 100;	
+	UPROPERTY(EditAnywhere, Category = "Moving")
+	float MoveDistance = 100;
+	UPROPERTY(EditAnywhere, Category="Rotation")
+	FRotator RotationVelocity;
 	
 	FVector StartLocation;
 
+	void MovePlatform(float DeltaTime);
+	void RotatePlatform(float DeltaTime);
+
+	bool ShouldPlatformReturn() const;
+	float GetDistanceMoved() const;
 };
